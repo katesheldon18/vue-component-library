@@ -3,14 +3,13 @@
     <aside class="sidebar">
       <nav>
         <ul>
-          <li><router-link to="/buttons">Buttons</router-link></li>
-          <li><router-link to="/forms">Forms</router-link></li>
-          <li><router-link to="/feedback">Feedback</router-link></li>
-          <li><router-link to="/navigation">Navigation</router-link></li>
+          <li class="sidebar__link"><router-link to="/">Home</router-link></li>
+          <li class="sidebar__link"><router-link to="/buttons">Buttons</router-link></li>
+          <li class="sidebar__link"><router-link to="/forms">Forms</router-link></li>
         </ul>
       </nav>
     </aside>
-    <main class="main-content">
+    <main>
       <router-view />
     </main>
   </div>
@@ -26,12 +25,17 @@
 }
 
 .sidebar {
-  width: 200px;
+  width: 12.5rem;
   background-color: #f3f3f3;
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
-.main-content {
+.sidebar__link {
+  margin: 0.5rem 0;
+  text-decoration: none;
+}
+
+main {
   flex: 1;
   padding: 2rem;
 }
