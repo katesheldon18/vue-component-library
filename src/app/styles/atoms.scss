@@ -1,0 +1,109 @@
+@import '../styles/variables.scss';
+
+// Utility classes for Atoms page
+
+.u-text {
+  color: $color-text;
+  margin-bottom: 1rem;
+}
+
+.u-text-primary {
+  color: $color-primary-text;
+}
+
+.u-text-placeholder {
+  color: $color-placeholder;
+}
+
+.u-bg-primary {
+  background-color: $color-primary-bg;
+}
+
+.u-bg-secondary {
+  background-color: $color-secondary-bg;
+}
+
+.u-bg-surface {
+  background-color: $color-surface;
+}
+
+.u-bg-neutral {
+  background-color: $neutral-100;
+}
+
+.u-button {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.u-button-primary {
+  background-color: $color-primary;
+  color: white;
+}
+
+.u-button-secondary {
+  background-color: $color-secondary;
+  color: white;
+}
+
+.u-form-field {
+  padding: 0.5rem;
+  border: 1px solid $color-border;
+  border-radius: 4px;
+  color: $color-text;
+  background-color: white;
+}
+
+// Layout
+
+.u-container {
+  padding: 2rem;
+}
+
+.u-tile {
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+}
+
+// Alerts
+
+.u-alert {
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 1rem 0;
+  font-weight: 500;
+}
+
+.u-alert-success {
+  @extend .u-alert;
+  background-color: $green-50;
+  border: 1px solid $green-200;
+  color: $green-800;
+}
+
+.u-alert-info {
+  @extend .u-alert;
+  background-color: $blue-50;
+  border: 1px solid $blue-200;
+  color: $blue-800;
+}
+
+.u-alert-warning {
+  @extend .u-alert;
+  background-color: $yellow-50;
+  border: 1px solid $yellow-200;
+  color: $yellow-800;
+}
+
+.u-alert-error {
+  @extend .u-alert;
+  background-color: $red-50;
+  border: 1px solid $red-200;
+  color: $red-800;
+}

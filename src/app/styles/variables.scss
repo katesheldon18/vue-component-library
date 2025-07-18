@@ -1,128 +1,58 @@
 // Purples (used for primary)
-$purple-50:  #F3E8FF;
-$purple-100: #D6B4FF;
-$purple-200:  #6e4df5;
-$purple-300: #442f9a;
-$purple-400: #2A218C;
+$purple-50:  #F3E8FF;   // medium background - primary
+$purple-100: #c1b3e4;   // base token
+$purple-200: #6e4df5;   // colour primary - button background & some fun text
+$purple-400: #2A218C;   // secondary text/heading colour
 
 // Blues (used for secondary)
-$blue-50:  #DFF6FF;
-$blue-100: #AEE7FF;
-$blue-200: #0292e5;
-$blue-300: #0B355F;
-$blue-900: #162042;
-
+$blue-50:   #DFF6FF;    // medium background - secondary
+$blue-200:  #0292e5;    // secondary button colour background. some borders.
+$blue-900:  #162042;    // text - primary
 
 // Neutrals
-$neutral-50:  #ededff40;
-$neutral-100: #F5F6F7;
-$neutral-500: #7D818A;
+$neutral-50:  #F5F6F7;       // light border
+$neutral-100: #ededff40;     // light background
+$neutral-200: #5C667966;     // placeholder text
 
-// Base tokens
-$base-text-placeholder: #c1b3e4;
 
-// Semantic roles
-$color-primary: $purple-200;
-$color-primary-hover: $purple-400;
-$color-primary-bg: $purple-50;
+// Semantic Tokens
 
-$color-secondary: $blue-200;
-$color-secondary-hover: $blue-300;
-$color-secondary-bg: $blue-50;
+// Text
+$color-text: $blue-900;                // main/default text
+$color-placeholder: $neutral-200;      // placeholder text
+$color-primary-text: $purple-400;      // headings, secondary text
 
-$color-text: $blue-900;
-$color-text-placeholder: $base-text-placeholder;
-$color-border: $neutral-100;
-$color-surface: $neutral-50;
+// Background
+$color-surface: $neutral-100;          // UI surface, panels
+$color-primary-bg: $purple-50;         // primary background tints
+$color-secondary-bg: $blue-50;         // secondary background tints
 
-// Utilities
-.u-color-primary   { color: $color-primary; }
-.u-color-secondary { color: $color-secondary; }
-.u-bg-primary      { background-color: $color-primary-bg; }
-.u-bg-secondary    { background-color: $color-secondary-bg; }
-.u-text            { color: $color-text; }
-.u-surface         { background-color: $color-surface; }
-.u-border          { border: 1px solid $color-border; }
-.u-text-secondary  { color: $purple-400; }
+// Borders
+$color-border: $neutral-50;            // general border color
 
-.u-btn {
-  padding: 0.5rem 1rem;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  border-radius: 4px;
-  display: inline-block;
-  text-align: center;
-}
+// Action
+$color-primary: $purple-200;           // main brand/action color
+$color-secondary: $blue-200;           // secondary actions, accents
 
-.u-btn-primary {
-  @extend .u-btn;
-  background-color: $color-primary;
-  color: white;
-}
 
-.u-btn-secondary {
-  @extend .u-btn;
-  background-color: $color-secondary;
-  color: white;
-}
+// Alert Tokens
 
-// Inputs
-.u-input {
-  padding: 0.5rem;
-  border: 1px solid $blue-300;
-  border-radius: 4px;
-  background-color: white;
-  color: $color-text;
+// Success
+$green-50: #E7F8E9;
+$green-200: #60B527;
+$green-800: #276014;
 
-  &::placeholder {
-    color: $base-text-placeholder;
-  }
-}
+// Info
+$blue-50:   #E6F4FF;
+$blue-200:  #2188C4;
+$blue-800:  #0B355F;
 
-.u-label {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
-  color: $color-text;
-}
+// Warning
+$yellow-50:  #FFF8E1;
+$yellow-200: #F79D09;
+$yellow-800: #7A5300;
 
-.u-form-field {
-  margin-bottom: 1rem;
-}
-
-// Alert utilities
-.u-alert {
-  padding: 1rem;
-  border-radius: 4px;
-  margin: 1rem 0;
-  font-weight: 500;
-}
-
-.u-alert-success {
-  @extend .u-alert;
-  background-color: #E7F8E9;
-  border: 1px solid #60B527;
-  color: #276014;
-}
-
-.u-alert-info {
-  @extend .u-alert;
-  background-color: #E6F4FF;
-  border: 1px solid #2188C4;
-  color: #0B355F;
-}
-
-.u-alert-warning {
-  @extend .u-alert;
-  background-color: #FFF8E1;
-  border: 1px solid #F79D09;
-  color: #7A5300;
-}
-
-.u-alert-error {
-  @extend .u-alert;
-  background-color: #FFE6E6;
-  border: 1px solid #FF3932;
-  color: #8C1E1B;
-}
+// Error
+$red-50:   #FFE6E6;
+$red-200:  #FF3932;
+$red-800:  #8C1E1B;
