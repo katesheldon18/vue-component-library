@@ -1,5 +1,12 @@
 <template>
-  <button :type="type" class="button" :class="[classes, className]" :disabled="disabled" :loading="loading">
+  <button
+    :type="type"
+    class="button"
+    :class="[classes, className]"
+    :disabled="disabled"
+    :aria-busy="loading || undefined"
+    :aria-disabled="disabled || undefined"
+  >
       <span :class="{ 'is-hidden': loading }">
         <slot name="icon" />
         <slot>Click</slot>
@@ -11,16 +18,15 @@
 <script setup lang="ts">
   import {computed} from "vue";
 
-  const props = defineProps<{
-    className?: string,
-    disabled?: boolean,
-    loading?: boolean,
-    size?: 'sm' | 'lg',
-    type?: 'button' | 'submit' | 'reset',
-    variant?: 'primary' | 'secondary' | 'success' | 'info' | 'warning',
-  }>()
-
-  const { className, disabled = false, loading = false, size, type = 'button', variant = 'primary' } = props
+  const { className, disabled = false, loading = false, size, type = 'button', variant = 'primary' } =
+    defineProps<{
+      className?: string;
+      disabled?: boolean;
+      loading?: boolean;
+      size?: 'sm' | 'lg';
+      type?: 'button' | 'submit' | 'reset';
+      variant?: 'primary' | 'secondary' | 'success' | 'info' | 'warning';
+    }>();
 
   const classes = computed(() => {
     return {
@@ -32,7 +38,9 @@
 </script>
 
 <style scoped lang="scss">
-  .button {
+@import "../app/styles/variables.scss";
+
+.button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -41,9 +49,29 @@
     cursor: pointer;
     padding: 0.5rem 1rem;
     font-size: 1rem;
+    color: $white;
 
-    &:hover {
+    &:hover,
+    &:focus {
       opacity: 0.8;
+    }
+
+    &--primary {
+      background-color: $purple-200;
+    }
+
+    &--secondary {
+      background-color: $blue-200;
+    }
+
+    &--sm {
+      padding: 0.25rem 0.5rem;
+      font-size: 0.6275rem;
+    }
+
+    &--lg {
+      padding: 0.75rem 1.5rem;
+      font-size: 1.25rem;
     }
 
     &.is-loading {
@@ -51,26 +79,14 @@
       opacity: 0.8;
     }
 
-    &--primary {
-      background-color: lightblue;
-      border: 1px solid lightblue;
-    }
-    &--secondary {
-      background-color: transparent;
-      border: 1px solid black;
-    }
-    &--sm {
-      padding: 0.25rem 0.5rem;
-      font-size: 0.6275rem;
-    }
-    &--lg {
-      padding: 0.75rem 1.5rem;
-      font-size: 1.25rem;
-    }
-
-
     .is-hidden {
       opacity: 0;
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: $color-disabled-bg;
+      opacity: 1;
     }
   }
 

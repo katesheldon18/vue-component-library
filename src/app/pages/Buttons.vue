@@ -12,6 +12,9 @@
   <div>
     <Button variant="secondary" size="lg" loading />
   </div>
+  <div>
+    <Button variant="primary" disabled>Disabled state</Button>
+  </div>
 </template>
 
 <script setup lang="ts">
