@@ -1,0 +1,58 @@
+// Purples (used for primary)
+$purple-50:  #F3E8FF;   // medium background - primary
+$purple-100: #c1b3e4;   // base token
+$purple-200: #6e4df5;   // colour primary - button background & some fun text
+$purple-400: #2A218C;   // secondary text/heading colour
+
+// Blues (used for secondary)
+$blue-50:   #DFF6FF;    // medium background - secondary
+$blue-200:  #0292e5;    // secondary button colour background. some borders.
+$blue-900:  #162042;    // text - primary
+
+// Neutrals
+$neutral-50:  #F5F6F7;       // light border
+$neutral-100: #ededff40;     // light background
+$neutral-200: #5C667966;     // placeholder text
+
+
+// Semantic Tokens
+
+// Text
+$color-text: $blue-900;                // main/default text
+$color-placeholder: $neutral-200;      // placeholder text
+$color-primary-text: $purple-400;      // headings, secondary text
+
+// Background
+$color-surface: $neutral-100;          // UI surface, panels
+$color-primary-bg: $purple-50;         // primary background tints
+$color-secondary-bg: $blue-50;         // secondary background tints
+
+// Borders
+$color-border: $neutral-50;            // general border color
+
+// Action
+$color-primary: $purple-200;           // main brand/action color
+$color-secondary: $blue-200;           // secondary actions, accents
+
+
+// Alert Tokens
+
+// Success
+$green-50: #E7F8E9;
+$green-200: #60B527;
+$green-800: #276014;
+
+// Info
+$blue-50:   #E6F4FF;
+$blue-200:  #2188C4;
+$blue-800:  #0B355F;
+
+// Warning
+$yellow-50:  #FFF8E1;
+$yellow-200: #F79D09;
+$yellow-800: #7A5300;
+
+// Error
+$red-50:   #FFE6E6;
+$red-200:  #FF3932;
+$red-800:  #8C1E1B;
