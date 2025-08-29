@@ -5,6 +5,7 @@
         <ul>
           <li class="sidebar__link"><router-link to="/">Home</router-link></li>
           <li class="sidebar__link"><router-link to="/buttons">Buttons</router-link></li>
+          <li class="sidebar__link"><router-link to="/notes">Notes</router-link></li>
           <li class="sidebar__link"><router-link to="/forms">Forms</router-link></li>
           <li class="sidebar__link"><router-link to="/atoms">Style Guide</router-link></li>
         </ul>

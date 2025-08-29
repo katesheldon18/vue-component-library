@@ -10,6 +10,10 @@ const routes = [
     component: () => import('../pages/Buttons.vue'),
   },
   {
+    path: '/notes',
+    component: () => import('../pages/Notes.vue'),
+  },
+  {
     path: '/forms',
     component: () => import('../pages/Forms.vue'),
   },
