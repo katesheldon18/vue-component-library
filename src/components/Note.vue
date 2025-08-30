@@ -1,7 +1,7 @@
 <template>
   <div :class="`note note--${variant}`">
-    <div class="note__header">
-      <strong v-if="title" class="note__title">{{ title }}</strong>
+    <div v-if="title" class="note__header">
+      <strong class="note__title">{{ title }}</strong>
     </div>
     <div class="note__body">
       <slot />
@@ -22,6 +22,7 @@
 .note {
   padding: 1rem;
   border-radius: 4px;
+  font-size: $text-body;
 
   &--primary {
     color: $color-text;
@@ -30,6 +31,10 @@
   &--secondary {
     color: $color-primary-text;
     background-color: $color-secondary-bg;
+  }
+
+  .note__header {
+    margin-bottom: 0.5rem;
   }
 }
 </style>
