@@ -14,8 +14,8 @@ const routes = [
     component: () => import('../pages/Notes.vue'),
   },
   {
-    path: '/forms',
-    component: () => import('../pages/Forms.vue'),
+    path: '/toasts',
+    component: () => import('../pages/Toasts.vue'),
   },
   {
     path: '/atoms',

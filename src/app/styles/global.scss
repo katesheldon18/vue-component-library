@@ -26,3 +26,37 @@ h1 {
 h2 {
   font-size: 1.5rem;
 }
+
+button {
+  all: unset;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+// Transition
+.toast-slide-enter-active,
+.toast-slide-leave-active {
+  transition: all 0.3s ease;
+}
+.toast-slide-enter-from {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.toast-slide-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+.toast-slide-leave-from {
+  transform: translateX(0);
+  opacity: 1;
+}
+.toast-slide-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
