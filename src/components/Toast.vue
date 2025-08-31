@@ -3,7 +3,8 @@
     <template v-if="visible">
       <div
         class="toast"
-        :class="['toast--' + variant]">
+        :class="['toast--' + variant]"
+        :style="{ top: `calc(1rem + ${index * 3.5}rem)` }">
         <div class="toast__header">
           <div v-if="message" class="toast__message">
             {{ message }}
@@ -30,11 +31,12 @@ const visible = ref(false);
 const emits = defineEmits(['dismiss']);
 const transitionName = ref('toast');
 
-const {variant = 'info', duration = 4000} = defineProps<{
+const {variant = 'info', duration = 4000, index = 0} = defineProps<{
   variant?: 'info' | 'success' | 'warning' | 'error';
   message?: string;
   subtext?: string;
   duration?: number;
+  index?: number;
 }>();
 
 function handleDismiss() {
@@ -65,7 +67,6 @@ watch(visible, (newVal) => {
     border-radius: 0.25rem;
     font-size: $text-sm;
     position: absolute;
-    top: 1rem;
     right: 1rem;
     width: 20rem;
 

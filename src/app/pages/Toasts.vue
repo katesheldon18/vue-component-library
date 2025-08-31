@@ -16,9 +16,14 @@
     <Button @click="showToast('info', 'Toast Title', undefined, 'Here\'s a little something extra')">Toast can also have subtext</Button>
   </div>
 
-  <Toast v-if="currentToast" v-bind="currentToast" @dismiss="dismissToast">
+  <Toast
+      v-for="(toast, index) in toasts"
+      :key="toast.id"
+      v-bind="toast"
+      :index="index"
+      @dismiss="() => dismissToast(toast)"
+  />
 
-  </Toast>
 </template>
 
 <script setup lang="ts">
@@ -26,7 +31,7 @@
   import Button from '../../components/Button.vue'
   import { useToast } from '../../composables/useToast'
 
-  const { currentToast, showToast, dismissToast } = useToast()
+  const { toasts, showToast, dismissToast } = useToast()
 </script>
 
 <style scoped lang="scss">
