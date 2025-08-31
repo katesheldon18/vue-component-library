@@ -2,14 +2,26 @@ import { ref } from 'vue';
 
 type Toast = {
     id?: number
-    style?: 'info' | 'success' | 'warning' | 'error';
-    duration?: number
+    variant?: 'info' | 'success' | 'warning' | 'error';
+    message?: string;
+    duration?: number;
+    subtext?: string;
 }
 
 const currentToast = ref<Toast | null>(null);
 
-function showToast(toast: Toast) {
-    currentToast.value = toast;
+function showToast(
+    variant: Toast['variant'] = 'info',
+    message?: string,
+    duration: number = 3000,
+    subtext?: string,
+) {
+    currentToast.value = {
+        variant,
+        message,
+        duration,
+        subtext,
+    };
 }
 
 function dismissToast(toast: Toast) {

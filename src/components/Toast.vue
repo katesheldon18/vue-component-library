@@ -1,12 +1,12 @@
 <template>
-  <Transition name="toast-slide">
+  <Transition :name="transitionName">
     <template v-if="visible">
       <div
         class="toast"
         :class="['toast--' + variant]">
         <div class="toast__header">
-          <div v-if="slots.message" class="toast__message">
-            <slot name="message" class="toast__subtext"></slot>
+          <div v-if="message" class="toast__message">
+            {{ message }}
           </div>
           <button class="toast__close" aria-label="Dismiss" @click="handleDismiss">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -15,8 +15,8 @@
             </svg>
           </button>
         </div>
-        <div v-if="slots.subtext" class="toast__subtext">
-          <slot name="subtext"></slot>
+        <div v-if="subtext" class="toast__subtext">
+          {{ subtext}}
         </div>
       </div>
     </template>
@@ -26,21 +26,29 @@
 <script setup lang="ts">
 import { ref, watch, onMounted, useSlots } from 'vue'
 
-const slots = useSlots()
 const visible = ref(false);
-const emits = defineEmits(['dismiss'])
+const emits = defineEmits(['dismiss']);
+const transitionName = ref('toast');
 
-const {variant = 'info', duration = 2000} = defineProps<{
+const {variant = 'info', duration = 4000} = defineProps<{
   variant?: 'info' | 'success' | 'warning' | 'error';
+  message?: string;
+  subtext?: string;
   duration?: number;
 }>();
 
 function handleDismiss() {
   visible.value = false;
+  transitionName.value = 'toast';
 }
 
 onMounted(() => {
-  visible.value = true
+  visible.value = true;
+
+  setTimeout(() => {
+    visible.value = false;
+    transitionName.value = 'toast-fade';
+  }, duration)
 })
 
 watch(visible, (newVal) => {

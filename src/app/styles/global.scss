@@ -39,24 +39,35 @@ button {
   cursor: pointer;
 }
 
-// Transition
-.toast-slide-enter-active,
-.toast-slide-leave-active {
-  transition: all 0.3s ease;
+// Toast Transitions
+.toast-enter-active {
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
-.toast-slide-enter-from {
+.toast-enter-from {
   transform: translateX(100%);
   opacity: 0;
 }
-.toast-slide-enter-to {
+.toast-enter-to {
   transform: translateX(0);
   opacity: 1;
 }
-.toast-slide-leave-from {
+.toast-leave-active {
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+.toast-leave-from {
   transform: translateX(0);
   opacity: 1;
 }
-.toast-slide-leave-to {
+.toast-leave-to {
   transform: translateX(100%);
+  opacity: 0;
+}
+.toast-fade-leave-active {
+  transition: opacity 3s ease;
+}
+.toast-fade-leave-from {
+  opacity: 1;
+}
+.toast-fade-leave-to {
   opacity: 0;
 }

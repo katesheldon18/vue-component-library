@@ -1,25 +1,23 @@
 <template>
   <h1>Toasts</h1>
-  <div class="examples">
-    <Toast>
-      <template #message>Default Toast</template>
-      <template #subtext>Optional Subtext</template>
-    </Toast>
-    <Toast variant="success">
-      <template #message>Success Toast</template>
-    </Toast>
-    <Toast variant="warning">
-      <template #message>Warning Toast</template>
-    </Toast>
-    <Toast variant="error">
-      <template #message>Error Toast</template>
-    </Toast>
+  <div>
+    <Button @click="showToast('info', 'Informational Toast')">Show me an Info (Default) Toast!</Button>
+  </div>
+  <div>
+    <Button @click="showToast('success', 'Successful Toast')" variant="secondary">Show me a Success Toast!</Button>
+  </div>
+  <div>
+    <Button @click="showToast('warning', 'Warning Toast with Looooong Duration', 12000)">Show me a Warning Toast!</Button>
+  </div>
+  <div>
+    <Button @click="showToast('error', 'OH NO!')" variant="secondary">Show me an Error Toast!</Button>
+  </div>
+  <div>
+    <Button @click="showToast('info', 'Toast Title', undefined, 'Here\'s a little something extra')">Toast can also have subtext</Button>
   </div>
 
-  <Button @click="showToast">Show me a Toast!</Button>
-
   <Toast v-if="currentToast" v-bind="currentToast" @dismiss="dismissToast">
-    <template #message>Toast Positioning</template>
+
   </Toast>
 </template>
 
@@ -35,11 +33,4 @@
 div {
   margin: 1rem 0;
 }
-
-.examples {
-  .toast {
-    position: static;
-  }
-}
-
 </style>
