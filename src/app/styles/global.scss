@@ -26,3 +26,48 @@ h1 {
 h2 {
   font-size: 1.5rem;
 }
+
+button {
+  all: unset;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+// Toast Transitions
+.toast-enter-active {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.toast-enter-from {
+  transform: translateX(1.5rem);
+  opacity: 0;
+}
+.toast-enter-to {
+  transform: translateX(0);
+  opacity: 1;
+}
+.toast-leave-active {
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.toast-leave-from {
+  transform: translateX(0);
+  opacity: 1;
+}
+.toast-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+.toast-fade-leave-active {
+  transition: opacity 3s ease;
+}
+.toast-fade-leave-from {
+  opacity: 1;
+}
+.toast-fade-leave-to {
+  opacity: 0;
+}

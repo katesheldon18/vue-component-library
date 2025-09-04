@@ -60,9 +60,17 @@ $color-secondary: $blue-200;           // secondary actions, accents
 
 // States
 $color-success-bg: $green-50;
-$color-success-text: $green-200;
-$color-danger-bg: $red-50;
-$color-danger-text: $red-200;
+$color-success-border: $green-200;
+$color-success-text: $green-800;
+$color-info-bg: $blue-50;
+$color-info-border: $blue-200;
+$color-info-text: $blue-800;
+$color-warning-bg: $yellow-50;
+$color-warning-border: $yellow-200;
+$color-warning-text: $yellow-800;
+$color-error-bg: $red-50;
+$color-error-border: $red-200;
+$color-error-text: $red-800;
 $color-disabled-bg: $neutral-200;
 
 // Text
@@ -72,4 +80,5 @@ $heading-md: 20px;
 $heading-sm: 16px;
 $text-body: 14px;
 $text-sm: 12px;
+$text-xs: 10px;
 $font-bold: 700;
