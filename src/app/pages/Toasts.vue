@@ -16,13 +16,17 @@
     <Button @click="showToast('info', 'Toast Title', undefined, 'Here\'s a little something extra')">Toast can also have subtext</Button>
   </div>
 
-  <Toast
-      v-for="(toast, index) in toasts"
-      :key="toast.id"
-      v-bind="toast"
-      :index="index"
-      @dismiss="() => dismissToast(toast)"
-  />
+  <div>
+    <div class="notification-container">
+      <Toast
+          v-for="(toast, index) in [...toasts].reverse()"
+          :key="toast.id"
+          v-bind="toast"
+          :index="index"
+          @dismiss="() => dismissToast(toast)"
+      />
+    </div>
+  </div>
 
 </template>
 
@@ -35,7 +39,16 @@
 </script>
 
 <style scoped lang="scss">
-div {
-  margin: 1rem 0;
+button {
+  margin: 0.5rem 0;
+}
+.notification-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 </style>

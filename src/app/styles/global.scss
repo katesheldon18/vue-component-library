@@ -41,10 +41,10 @@ button {
 
 // Toast Transitions
 .toast-enter-active {
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 .toast-enter-from {
-  transform: translateX(100%);
+  transform: translateX(1.5rem);
   opacity: 0;
 }
 .toast-enter-to {
@@ -52,7 +52,7 @@ button {
   opacity: 1;
 }
 .toast-leave-active {
-  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 .toast-leave-from {
   transform: translateX(0);

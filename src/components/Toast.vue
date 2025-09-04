@@ -3,8 +3,7 @@
     <template v-if="visible">
       <div
         class="toast"
-        :class="['toast--' + variant]"
-        :style="{ top: `calc(1rem + ${index * 3.5}rem)` }">
+        :class="['toast--' + variant]">
         <div class="toast__header">
           <div v-if="message" class="toast__message">
             {{ message }}
@@ -66,7 +65,6 @@ watch(visible, (newVal) => {
     padding: 0.5rem;
     border-radius: 0.25rem;
     font-size: $text-sm;
-    position: absolute;
     right: 1rem;
     width: 20rem;
 
