@@ -1,9 +1,20 @@
 <template>
-  <div @click="onClick" class="accordion ">
-    <div class="accordion__icon">+</div>
-    <div class="accordion__title">Question</div>
-    <div :class="['accordion__wrapper', { 'is-open' : open }]" >
-      <div class="accordion__content">Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer Answer</div>
+  <div class="accordion" :class="{ 'is-open' : open }">
+    <div @click="onClick" class="accordion__header">
+      <svg class="accordion__icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+        <g>
+          <rect class="bar-horizontal" x="0" y="5.5" width="12" height="1"></rect>
+          <rect class="bar-vertical" x="5.5" y="0" width="1" height="12"></rect>
+        </g>
+      </svg>
+      <div class="accordion__title">
+        <slot name="title"></slot>
+      </div>
+    </div>
+    <div class="accordion__wrapper" >
+      <div class="accordion__content">
+        <slot name="content"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -13,22 +24,41 @@ const { onClick, open = false, } = defineProps<{ onClick?: (e: MouseEvent) => vo
 </script>
 
 
-<style scoped>
+<style scoped lang="scss">
+@import "../app/styles/variables.scss";
 
 .accordion {
   display: grid;
   grid-template-columns: 2rem 1fr;
   grid-template-rows: auto 1fr;
   place-items: center start;
+  margin: 0.5rem;
 }
 
-.accordion__icon {
-  grid-area: 1 / 1;
+.accordion__header {
+  display: contents;
+  cursor: pointer;
+}
+
+.bar-vertical {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.is-open {
+  .accordion__wrapper {
+    grid-template-rows: 1fr;
+  }
+
+  .bar-vertical {
+    opacity: 0;
+  }
 }
 
 .accordion__title {
   grid-area: 1 / 2;
-
+  font-size: $heading-sm;
+  font-weight: $font-bold;
+  color: $color-text;
 }
 
 .accordion__wrapper {
@@ -38,12 +68,11 @@ const { onClick, open = false, } = defineProps<{ onClick?: (e: MouseEvent) => vo
   transition: grid-template-rows 0.5s ease-in-out;
 }
 
-.accordion__wrapper.is-open {
-  grid-template-rows: 1fr;
-}
-
 .accordion__content {
   overflow: hidden;
+  font-size: $text-body;
+  color: $color-primary-text;
+  padding-top: 0.25rem;
 }
 
 </style>
