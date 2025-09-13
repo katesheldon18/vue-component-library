@@ -18,6 +18,10 @@ const routes = [
     component: () => import('../pages/Toasts.vue'),
   },
   {
+    path: '/accordions',
+    component: () => import('../pages/Accordions.vue'),
+  },
+  {
     path: '/atoms',
     component: () => import('../pages/Atoms.vue'),
   }
