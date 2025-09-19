@@ -8,6 +8,7 @@
           <li class="sidebar__link"><router-link to="/notes">Notes</router-link></li>
           <li class="sidebar__link"><router-link to="/toasts">Toasts</router-link></li>
           <li class="sidebar__link"><router-link to="/accordions">Accordions</router-link></li>
+          <li class="sidebar__link"><router-link to="/checkbox">Checkbox</router-link></li>
           <li class="sidebar__link"><router-link to="/atoms">Style Guide</router-link></li>
         </ul>
       </nav>

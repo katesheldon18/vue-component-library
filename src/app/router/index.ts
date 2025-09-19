@@ -22,6 +22,10 @@ const routes = [
     component: () => import('../pages/Accordions.vue'),
   },
   {
+    path: '/checkbox',
+    component: () => import('../pages/Checkboxes.vue'),
+  },
+  {
     path: '/atoms',
     component: () => import('../pages/Atoms.vue'),
   }
