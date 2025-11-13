@@ -26,6 +26,10 @@ const routes = [
     component: () => import('../pages/Checkboxes.vue'),
   },
   {
+    path: '/switch',
+    component: () => import('../pages/Switches.vue'),
+  },
+  {
     path: '/atoms',
     component: () => import('../pages/Atoms.vue'),
   }
