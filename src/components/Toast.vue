@@ -30,12 +30,13 @@ const visible = ref(false);
 const emits = defineEmits(['dismiss']);
 const transitionName = ref('toast');
 
-const {variant = 'info', duration = 4000, index = 0} = defineProps<{
+const {variant = 'info', duration = 4000, index = 0, autoDismiss = true} = defineProps<{
   variant?: 'info' | 'success' | 'warning' | 'error';
   message?: string;
   subtext?: string;
   duration?: number;
   index?: number;
+  autoDismiss?: boolean;
 }>();
 
 function handleDismiss() {
@@ -46,10 +47,12 @@ function handleDismiss() {
 onMounted(() => {
   visible.value = true;
 
-  setTimeout(() => {
-    visible.value = false;
-    transitionName.value = 'toast-fade';
-  }, duration)
+  if (autoDismiss) {
+    setTimeout(() => {
+      visible.value = false;
+      transitionName.value = 'toast-fade';
+    }, duration)
+  }
 })
 
 watch(visible, (newVal) => {
@@ -98,6 +101,11 @@ watch(visible, (newVal) => {
     }
 
     .toast__close {
+      border: none;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      color: inherit;
       line-height: 0;
     }
 

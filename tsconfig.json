@@ -5,6 +5,9 @@
     "moduleResolution": "Node",
     "types": ["node"],
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "compilerOptions": {
+      "moduleResolution": "bundler"
+    },
   }
 }
