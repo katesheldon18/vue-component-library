@@ -65,7 +65,6 @@ function handleClick() {
   font-size: $heading-sm;
   font-weight: $font-bold;
   color: $color-text;
-  width: auto;
 }
 
 .accordion__wrapper {

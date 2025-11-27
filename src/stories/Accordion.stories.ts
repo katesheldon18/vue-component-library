@@ -6,7 +6,6 @@ import Accordion from '../../src/components/Accordion.vue';
 const meta = {
     title: 'Example/Accordion',
     component: Accordion,
-    // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/writing-docs/autodocs
     tags: ['autodocs'],
     argTypes: {
         open: { control: 'boolean', options: ['true', 'false'] },
