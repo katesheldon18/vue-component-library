@@ -63,7 +63,6 @@ const onChange = (e) => {
   left: 0;
   z-index: 1;
   align-items: center;
-  justify-content: center;
 }
 
 .checkbox__checkmark.is-checked {
