@@ -17,7 +17,7 @@
 </script>
 
 <style lang="scss" scoped>
-@import "../app/styles/variables.scss";
+@use "../app/styles/variables.scss" as *;
 
 .note {
   padding: 1rem;

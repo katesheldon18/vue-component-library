@@ -31,7 +31,7 @@ function handleClick() {
 
 
 <style scoped lang="scss">
-@import "../app/styles/variables.scss";
+@use "../app/styles/variables.scss" as *;
 
 .accordion {
   display: grid;

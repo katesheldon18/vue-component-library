@@ -20,7 +20,7 @@
 </template>
 
 <style lang="scss">
-@import '../styles/atoms.scss';
+@use '../styles/atoms.scss';
 </style>
 <script setup lang="ts">
 </script>

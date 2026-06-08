@@ -38,7 +38,7 @@
 </script>
 
 <style scoped lang="scss">
-@import "../app/styles/variables.scss";
+@use "../app/styles/variables.scss" as *;
 
 .button {
     display: inline-flex;

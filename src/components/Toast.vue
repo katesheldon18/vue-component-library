@@ -62,7 +62,7 @@ watch(visible, (newVal) => {
 </script>
 
 <style lang="scss">
-@import "../app/styles/variables.scss";
+@use "../app/styles/variables.scss" as *;
 
   .toast {
     padding: 0.5rem;

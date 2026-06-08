@@ -25,7 +25,7 @@ const isChecked3 = ref(true);
 </script>
 
 <style lang="scss">
-@import "../styles/variables.scss";
+@use "../styles/variables.scss" as *;
 
 .spacing {
   margin: 1rem 0;
