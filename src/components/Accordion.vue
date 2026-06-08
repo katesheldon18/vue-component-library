@@ -1,6 +1,6 @@
 <template>
   <div class="accordion" :class="{ 'is-open' : open }">
-    <div @click="onClick" class="accordion__header">
+    <div @click="handleClick" class="accordion__header">
       <svg class="accordion__icon" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
         <g>
           <rect class="bar-horizontal" x="0" y="5.5" width="12" height="1"></rect>
@@ -20,12 +20,18 @@
 </template>
 
 <script setup lang="ts">
-const { onClick, open = false, } = defineProps<{ onClick?: (e: MouseEvent) => void; open: boolean; }>()
+const props = defineProps<{
+  open: boolean;
+}>();
+const emit = defineEmits(['toggle']);
+function handleClick() {
+  emit('toggle');
+}
 </script>
 
 
 <style scoped lang="scss">
-@import "../app/styles/variables.scss";
+@use "../app/styles/variables.scss" as *;
 
 .accordion {
   display: grid;

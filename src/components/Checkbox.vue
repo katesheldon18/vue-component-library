@@ -27,7 +27,7 @@ const onChange = (e) => {
 </script>
 
 <style scoped lang="scss">
-@import "../app/styles/variables.scss";
+@use "../app/styles/variables.scss" as *;
 
 .checkbox {
   cursor: pointer;
@@ -63,7 +63,6 @@ const onChange = (e) => {
   left: 0;
   z-index: 1;
   align-items: center;
-  justify-content: center;
 }
 
 .checkbox__checkmark.is-checked {
